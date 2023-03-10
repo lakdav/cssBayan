@@ -35,20 +35,7 @@ body {
 	cursor: pointer;
 	min-height: 110vh;
 }
-.container:hover .accordion__item-text span {
-	visibility: visible;
-	opacity: 1;
-}
-.accordion__item:hover .accordion__item-image {
-	height: 40rem;
-	transform: scale(1);
-}
-.container:hover .accordion__item-text {
-	color: black;
-}
-.container:hover .accordion__item-text span {
-	transform: rotate(45deg);
-}
+
 .accordion__title {
 	font-size: 5rem;
 	font-weight: bold;
@@ -57,7 +44,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	border-top: 1px solid rgba(128, 128, 128, 0.2);
-	padding-block: 2rem;
+	padding-bottom: 2rem;
 	gap: 1rem;
 }
 .accordion__item-text {
@@ -68,6 +55,8 @@ body {
 	font-weight: bold;
 	color: #1e40af;
 	transition: color 0.3s;
+	cursor: pointer;
+	padding-block: 2rem;
 }
 .accordion__item-text span {
 	width: 3rem;
@@ -90,7 +79,7 @@ body {
 	background-color: gray;
 	height: 0;
 	overflow: hidden;
-	transition: height 0.3s, transform 0.2s 0.3s;
+	transition: height 0.3s, padding 0s 0s, transform 0s 0s;
 	transform: scale(0);
 }
 .accordion__item:nth-child(1) .accordion__item-image {
@@ -140,6 +129,25 @@ body {
 	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
+.container:hover .accordion__item-text {
+	color: black;
+}
+.accordion__item-text:hover {
+	background-color: rgba(0, 0, 0, 0.025);
+}
+.accordion__item:hover span {
+	transform: rotate(45deg);
+}
+.container:hover .accordion__item-text span {
+	visibility: visible;
+	opacity: 1;
+}
+.accordion__item:hover .accordion__item-image {
+	transition: height 0.3s, padding 0.1s, transform 0.2s 0.3s;
+	height: 50rem;
+	padding: 1.5rem;
+	transform: scale(1);
+}
 .accordion__item > input:checked ~ .accordion__item-text {
 	color: black;
 }
@@ -147,7 +155,9 @@ body {
 	transform: rotate(45deg);
 }
 .accordion__item > input:checked ~ .accordion__item-image {
-	height: 40rem;
+	transition: height 0.3s, padding 0.1s, transform 0.2s 0.3s;
+	height: 50rem;
+	padding: 1.5rem;
 	transform: scale(1);
 }
 @media screen and (min-width: 820px) {
