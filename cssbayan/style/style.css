@@ -33,7 +33,6 @@ body {
 	width: min(120rem, 100% - 4vw);
 	margin-inline: auto;
 	padding-block: 2vw;
-	cursor: pointer;
 	min-height: 110vh;
 }
 
@@ -45,21 +44,21 @@ body {
 	display: flex;
 	flex-direction: column;
 	border-top: 1px solid rgba(128, 128, 128, 0.2);
-	padding-bottom: 2rem;
+	padding-block: 1rem;
 	gap: 1rem;
 }
-.accordion__item-text {
+.accordion__item-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+.accordion__item-text {
 	font-size: 2.2rem;
 	font-weight: bold;
 	color: #1e40af;
 	transition: color 0.3s;
-	cursor: pointer;
-	padding-block: 2rem;
 }
-.accordion__item-text span {
+.accordion__item-icon {
 	width: 3rem;
 	aspect-ratio: 1;
 	display: flex;
@@ -120,7 +119,7 @@ body {
 	text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.25), -2px -3px 6px rgba(0, 0, 0, 0.25), 2px -3px 6px rgba(0, 0, 0, 0.25),
 		-2px 3px 6px rgba(0, 0, 0, 0.25);
 }
-.accordion__item > input {
+input {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -133,13 +132,11 @@ body {
 .container:hover .accordion__item-text {
 	color: black;
 }
-.accordion__item-text:hover {
-	background-color: rgba(0, 0, 0, 0.025);
-}
-.accordion__item:hover span {
+
+.accordion__item:hover .accordion__item-icon {
 	transform: rotate(45deg);
 }
-.container:hover .accordion__item-text span {
+.container:hover .accordion__item-icon {
 	visibility: visible;
 	opacity: 1;
 }
@@ -149,20 +146,17 @@ body {
 	padding: 1.5rem;
 	transform: scale(1);
 }
-.accordion__item-text:active {
-	cursor: url('../image/circle.svg'), pointer;
-}
+
 .accordion__item:active {
 	opacity: 0.6;
-	cursor: url('../image/circle.svg'), pointer;
 }
-.accordion__item > input:checked ~ .accordion__item-text {
+input:checked ~ .accordion__item-header > .accordion__item-text {
 	color: black;
 }
-.accordion__item > input:checked ~ .accordion__item-text span {
+input:checked ~ .accordion__item-header > .accordion__item-icon {
 	transform: rotate(45deg);
 }
-.accordion__item > input:checked ~ .accordion__item-image {
+input:checked ~ .accordion__item-image {
 	transition: height 0.3s, padding 0.1s, transform 0.2s 0.3s;
 	height: var(--height);
 	padding: 1.5rem;
@@ -172,6 +166,14 @@ body {
 	:root {
 		--fs: 55%;
 		--height: 50rem;
+	}
+}
+@media screen and (min-width: 1240px) {
+	.accordion__item {
+		cursor: pointer;
+	}
+	.accordion__item:active {
+		cursor: url('../image/circle.svg'), pointer;
 	}
 }
 @media screen and (min-width: 1920px) {
