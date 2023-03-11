@@ -9,6 +9,7 @@
 	--tablet: 820px;
 	--desktop: 1920px;
 	--fs: 45%;
+	--height: 45rem;
 }
 html {
 	font-size: var(--fs);
@@ -144,9 +145,16 @@ body {
 }
 .accordion__item:hover .accordion__item-image {
 	transition: height 0.3s, padding 0.1s, transform 0.2s 0.3s;
-	height: 50rem;
+	height: var(--height);
 	padding: 1.5rem;
 	transform: scale(1);
+}
+.accordion__item-text:active {
+	cursor: url('../image/circle.svg'), pointer;
+}
+.accordion__item:active {
+	opacity: 0.6;
+	cursor: url('../image/circle.svg'), pointer;
 }
 .accordion__item > input:checked ~ .accordion__item-text {
 	color: black;
@@ -156,13 +164,14 @@ body {
 }
 .accordion__item > input:checked ~ .accordion__item-image {
 	transition: height 0.3s, padding 0.1s, transform 0.2s 0.3s;
-	height: 50rem;
+	height: var(--height);
 	padding: 1.5rem;
 	transform: scale(1);
 }
 @media screen and (min-width: 820px) {
 	:root {
 		--fs: 55%;
+		--height: 50rem;
 	}
 }
 @media screen and (min-width: 1920px) {
