@@ -168,7 +168,7 @@ input:checked ~ .accordion__item-image {
 		--height: 50rem;
 	}
 }
-@media screen and (min-width: 1240px) {
+@media (hover: hover) {
 	.accordion__item {
 		cursor: pointer;
 	}
