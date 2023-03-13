@@ -1,3 +1,3 @@
 # cssBayan
 
-[cssBayan](https://lakdav.github.io/cssbayan/cssbayan/index)
+[cssBayan](https://lakdav.github.io/cssBayan/cssBayan/index)
